@@ -4,11 +4,13 @@
 async function figureeight() {
 	setSpeed(65);
 	setHeading(90);
-	setMainLed({r:250, g: 120, b: 0});
-	await spin (-360,4)
+	//setMainLed({r:250, g: 120, b: 0});
+	setMainLed(getRandomColor());
+	await spin (-359,4)
 	//makes a circle 
-	setMainLed({r:30, g: 255, b:20});
-	await spin (360,4)
+	//setMainLed({r:30, g: 255, b:20});
+	setMainLed(getRandomColor());
+	await spin (359,4)
 	//makes a circle in the opposite direction
 }
 
