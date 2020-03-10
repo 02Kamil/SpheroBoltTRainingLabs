@@ -1,3 +1,6 @@
+/**
+ *Sphero Bolt does a figure eight
+*/
 async function figureeight() {
 	setSpeed(65);
 	setHeading(90);
@@ -7,13 +10,7 @@ async function figureeight() {
 	setMainLed({r:30, g: 255, b:20});
 	await spin (360,4)
 	//makes a circle in the opposite direction
-	setHeading(0);
-	setSpeed(0);
-	await speak("Taahhdaaahhh!", true);
 }
-/**
- *Sphero Bolt does a figure eight
-*/
 
 async function startProgram() {
 	// Sets color to blue, moves forward
@@ -21,7 +18,14 @@ async function startProgram() {
     setMainLed({ r: 0, g: 50, b: 255});
     setSpeed(45);
     await delay (3);
-	await figureeight();
+	// Sphero goes straight forward to make space
+	for (var _i1 = 0; _i1 < 3; _i1++) {
+		await figureeight();
+	} // Does a figure 8 3 times in a row
+	setHeading(0);
+	setSpeed(0);
+	await speak("Taahhdaaahhh!", true);
 }
+
 
 
