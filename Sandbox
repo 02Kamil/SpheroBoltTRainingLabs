@@ -1,13 +1,18 @@
 async function startProgram() {
 	// Sets color to blue, moves forward
-    setMainLed({ r: 0, g: 0, b: 255});
-    setSpeed(60);
-    await delay (2);
-    setSpeed(0);
-	// moves right then left and forward (diagonal)
-	await roll(90,50,1.5)
-	await roll(315,66,3)
-	
+	setHeading(0);
+    setMainLed({ r: 0, g: 50, b: 255});
+    setSpeed(45);
+    await delay (3);
+	setSpeed(65);
+	setHeading(90);
+	setMainLed({r:250, g: 120, b: 0});
+	await spin (-360,4)
+	//makes a circle in the opposite direction
+	setMainLed({r:30, g: 255, b:20});
+	await spin (360,4)
+	//makes a circle
+	setHeading(0);
+	setSpeed(0);
+	await speak("Taahhdaaahhh!", true);
 }
-
-
