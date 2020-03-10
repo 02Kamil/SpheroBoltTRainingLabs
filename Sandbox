@@ -4,15 +4,17 @@ async function startProgram() {
     setMainLed({ r: 0, g: 50, b: 255});
     setSpeed(45);
     await delay (3);
+	//goes straight forward to make space
 	setSpeed(65);
 	setHeading(90);
 	setMainLed({r:250, g: 120, b: 0});
 	await spin (-360,4)
-	//makes a circle in the opposite direction
+	//makes a circle 
 	setMainLed({r:30, g: 255, b:20});
 	await spin (360,4)
-	//makes a circle
+	//makes a circle in the opposite direction
 	setHeading(0);
 	setSpeed(0);
 	await speak("Taahhdaaahhh!", true);
+	//brags
 }
