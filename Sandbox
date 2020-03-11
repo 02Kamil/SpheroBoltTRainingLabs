@@ -1,3 +1,11 @@
+/*
+programmer: Brendan & Kamil
+Date: 3.11.2020
+Program: This is a sandbox where Brendan and Kamil are learning multiple things with the sphero bolt.
+I am using the sphero wiki to get information related to all the commands. 
+I will have fun creating functions to try out with the sphero bolt.
+*/
+
 /**
  *Sphero Bolt does a figure eight
 */
