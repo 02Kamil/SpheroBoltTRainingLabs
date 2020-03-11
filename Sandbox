@@ -1,25 +1,21 @@
 /*
-programmer: Brendan & Kamil
+Programmer: Brendan & Kamil
 Date: 3.11.2020
 Program: This is a sandbox where Brendan and Kamil are learning multiple things with the sphero bolt.
-I am using the sphero wiki to get information related to all the commands. 
-I will have fun creating functions to try out with the sphero bolt.
+We are using the sphero wiki to get information related to all the commands. 
+we will have fun creating functions to try out with the sphero bolt.
 */
 
 /**
  *Sphero Bolt does a figure eight
 */
 async function figureeight() {
-	setSpeed(65);
-	setHeading(90);
-	//setMainLed({r:250, g: 120, b: 0});
+	setSpeed(65);     // sets speed to 65
+	setHeading(90);   // turns it to face 90 degrees
+	setMainLed(getRandomColor());   // Sets the LEDs to show a random color
+	await spin (-359,4)   // makes a circle 
 	setMainLed(getRandomColor());
-	await spin (-359,4)
-	//makes a circle 
-	//setMainLed({r:30, g: 255, b:20});
-	setMainLed(getRandomColor());
-	await spin (359,4)
-	//makes a circle in the opposite direction
+	await spin (359,4)   // makes a circle in the opposite direction
 }
 
 async function startProgram() {
@@ -27,14 +23,12 @@ async function startProgram() {
 	setHeading(0);
     setMainLed({ r: 0, g: 50, b: 255});
     setSpeed(45);
-    await delay (3);
-	// Sphero goes straight forward to make space
-	for (var _i1 = 0; _i1 < 3; _i1++) {
+    await delay (3);     // Sphero goes straight forward to make space for 3 seconds at speed 45
+	for (var _i1 = 0; _i1 < 3; _i1++) {    // Loop for 3 times
 		await figureeight();
-	} // Does a figure 8 3 times in a row
-	setHeading(0);
-	setSpeed(0);
-	await speak("Taahhdaaahhh!", true);
+	} // Does a figure8 3 times in a row
+	setHeading(0); // resets direction
+	setSpeed(0);   // stops bolt
 }
 
 
